@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,135 +8,271 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./bootstrap-5.3.3-dist/js/jquery-3.6.0.min.js"></script>
     <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="path/to/backToTop.js"></script>
     <title>Sumanth</title>
 </head>
-<body>   
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+
+<body>
+    <script src="action.js"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-light mb-5 nav-bar-color-grading">
         <div class="container">
-            <a class="navbar-brand fs-3 fw-bold" href="#">SUMANTH D R</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand fs-3 fw-bold text-white" href="#">SUMANTH D R</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link text-white" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
+                        <a class="nav-link text-white" href="#experience">Experience</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
+                        <a class="nav-link text-white" href="#skills">Skills</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
+                        <a class="nav-link text-white" href="#education">Education</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link text-white" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- About Section with Collapsible Content -->
-<section id="about" class="container mb-5">
-    <h2 class="text-center">About</h2>
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-6 text-center">
-            <div class="border border-dark p-3 mb-4">
-                <img src="assets/about-jpg.JPG" class="img-fluid rounded" alt="About Image">
+    <section id="about" class="container py-5 section-color-grading">
+        <h2 class="text-center mb-4 text-white">About Me</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-4 text-center mb-4">
+                <img src="assets/about-jpg.JPG" class="img-fluid rounded shadow" alt="Profile Image">
             </div>
-            <p class="lead">Software Engineer with over 2 years of experience in core software development...</p>
-            <a class="btn btn-light" data-bs-toggle="collapse" href="#aboutMore" role="button" aria-expanded="false" aria-controls="aboutMore">
-                Read More
-            </a>
-            <div class="collapse mt-3" id="aboutMore">
-                <p>
-                    Hi there! I'm Sumanth.
-                    I'm a software engineer with nearly 2 years of experience, currently pursuing my Master of Science in Computer Science at Northern Arizona University, USA. Previously, I worked at Acelucid Technologies in Bangalore as a Software Engineer I, where I gained hands-on experience with .NET Core and Angular.            
-                    Throughout my career, I've worked with a range of programming languages, libraries, and technologies, including C#, .NET Core, EF Core, Angular, Kendo, SQL Server Management Studio, and Stored Procedures.            
-                    I earned my M.C.A. (Master of Computer Applications) in 2022, and during that time, I developed a desktop software solution for a local school, enabling them to manage student information more efficiently.
-                    I also undertook a research project, creating my own cryptographic hashing algorithm. Additionally, I worked as an IT Support Engineer for a local shop, troubleshooting hardware issues, performing software installations, and configuring systems to meet user needs.            
-                    My interests span distributed systems, Web API development, database design, and cryptography, and I'm constantly eager to explore new and emerging technologies.            
-                    On a personal note, I’m passionate about self-improvement and growth. I enjoy playing badminton and listening to music for relaxation and mental clarity.            
-                    I’m excited to connect with fellow tech enthusiasts and collaborate to make a positive impact in the tech world. Let’s learn, grow, and innovate together!
-                    
-                    Hope you have a great day!
+            <div class="col-md-8">
+                <p class="lead text-justify text-white">
+                    I'm a Software Engineer with over 2 years of experience, currently pursuing my Master of Science in
+                    Computer Science at Northern Arizona University, USA. Previously, I worked at Acelucid Technologies,
+                    Bangalore, where I gained experience in .NET Core and Angular.
                 </p>
+                <button class="btn btn-outline-light mt-3" data-bs-toggle="collapse" href="#aboutMore" role="button"
+                    aria-expanded="false" aria-controls="aboutMore">
+                    Read More
+                </button>
+                <div class="collapse mt-3" id="aboutMore">
+                    <p class="text-justify text-white">
+                        Throughout my career, I've worked with a range of programming languages, libraries, and
+                        technologies, including C#, .NET Core, EF Core, Angular, Kendo, SQL Server Management Studio,
+                        and Stored Procedures.
+                        I earned my M.C.A. (Master of Computer Applications) in 2022, and during that time, I developed
+                        a desktop software solution for a local school, enabling them to manage student information more
+                        efficiently.
+                        I also undertook a research project, creating my own cryptographic hashing algorithm.
+                    </p>
+                    <p class="text-justify text-white">
+                        Additionally, I worked as an IT Support Engineer for a local shop, troubleshooting hardware
+                        issues, performing software installations, and configuring systems to meet user needs.
+                        My interests span distributed systems, Web API development, database design, and cryptography,
+                        and I'm constantly eager to explore new and emerging technologies.
+                        On a personal note, I’m passionate about self-improvement and growth. I enjoy playing badminton
+                        and listening to music for relaxation and mental clarity.
+                        I’m excited to connect with fellow tech enthusiasts and collaborate to make a positive impact in
+                        the tech world. Let’s learn, grow, and innovate together!
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <section id="education" class="container mb-5">
-        <h2 class="text-center">Education</h2>
+    <section id="education" class="container mb-5 section-color-grading margin-from-top-40">
+        <h2 class="text-center text-white mb-4">Education</h2>
         <ul class="list-group">
-            <li class="list-group-item"><strong>Master of Science in Computer Science</strong> - Northern Arizona University, Dec 2025</li>
-            <li class="list-group-item"><strong>Master of Computer Applications (MCA)</strong> - Siddaganga Institute of Technology, Aug 2022</li>
+            <li class="list-group-item bg-transparent border-0 text-white">
+                <strong>Master of Science in Computer Science (MS CS)</strong> - Northern Arizona University, Dec 2025
+            </li>
+            <li class="list-group-item bg-transparent border-0 text-white">
+                <strong>Master of Computer Applications (MCA)</strong> - Siddaganga Institute of Technology, Aug 2022
+            </li>
         </ul>
     </section>
-    <section id="skills" class="container mb-5">
-        <h2 class="text-center">Skills</h2>
-        <ul class="list-group">
-            <li class="list-group-item">Languages: C#, Core Java, JavaScript, C</li>
-            <li class="list-group-item">Frameworks: .NET Core, ASP.NET, Entity Framework</li>
-            <li class="list-group-item">Databases: MS-SQL, MySQL, PostgresSQL</li>
-            <li class="list-group-item">Tools: VS Code, Visual Studio, MS Office</li>
-            <li class="list-group-item">Others: Github, Trello, Azure DevOps</li>
-        </ul>
-    </section>
-    <section id="experience" class="container mb-5">
-        <h2 class="text-center">Experience</h2>
+
+    <section id="skills" class="container mb-5 py-5 section-color-grading">
+        <h2 class="text-center text-white mb-4">Skills</h2>
         <div class="row">
+            <!-- Programming Languages -->
+            <div class="col-md-6 mb-3">
+                <h5 class="text-white"><i class="fas fa-code"></i> <strong>Programming Languages</strong></h5>
+                <ul class="list-unstyled text-white">
+                    <li><i class="fas fa-check-circle"></i> C#</li>
+                    <li><i class="fas fa-check-circle"></i> Core Java</li>
+                    <li><i class="fas fa-check-circle"></i> JavaScript</li>
+                    <li><i class="fas fa-check-circle"></i> C</li>
+                </ul>
+            </div>
+
+            <!-- Frameworks & Libraries -->
+            <div class="col-md-6 mb-3">
+                <h5 class="text-white"><i class="fas fa-laptop-code"></i> <strong>Frameworks & Libraries</strong></h5>
+                <ul class="list-unstyled text-white">
+                    <li><i class="fas fa-check-circle"></i> .NET Core</li>
+                    <li><i class="fas fa-check-circle"></i> ASP.NET</li>
+                    <li><i class="fas fa-check-circle"></i> Entity Framework</li>
+                    <li><i class="fas fa-check-circle"></i> Angular</li>
+                    <li><i class="fas fa-check-circle"></i> Kendo UI</li>
+                </ul>
+            </div>
+
+            <!-- Databases & SQL -->
+            <div class="col-md-6 mb-3">
+                <h5 class="text-white"><i class="fas fa-database"></i> <strong>Databases & SQL</strong></h5>
+                <ul class="list-unstyled text-white">
+                    <li><i class="fas fa-check-circle"></i> MS-SQL</li>
+                    <li><i class="fas fa-check-circle"></i> MySQL</li>
+                    <li><i class="fas fa-check-circle"></i> PostgreSQL</li>
+                    <li><i class="fas fa-check-circle"></i> SQL Server Management Studio</li>
+                    <li><i class="fas fa-check-circle"></i> Writing Stored Procedures</li>
+                    <li><i class="fas fa-check-circle"></i> Complex SQL Queries</li>
+                </ul>
+            </div>
+
+            <!-- Tools & Development Environments -->
+            <div class="col-md-6 mb-3">
+                <h5 class="text-white"><i class="fas fa-tools"></i> <strong>Tools & Development Environments</strong>
+                </h5>
+                <ul class="list-unstyled text-white">
+                    <li><i class="fas fa-check-circle"></i> Visual Studio</li>
+                    <li><i class="fas fa-check-circle"></i> VS Code</li>
+                    <li><i class="fas fa-check-circle"></i> GitHub</li>
+                    <li><i class="fas fa-check-circle"></i> Azure DevOps</li>
+                </ul>
+            </div>
+
+            <!-- IT Support Skills -->
+            <div class="col-md-6 mb-3">
+                <h5 class="text-white"><i class="fas fa-cogs"></i> <strong>IT Support & Systems Administration</strong>
+                </h5>
+                <ul class="list-unstyled text-white">
+                    <li><i class="fas fa-check-circle"></i> Hardware Troubleshooting</li>
+                    <li><i class="fas fa-check-circle"></i> Software Installation</li>
+                    <li><i class="fas fa-check-circle"></i> System Configuration</li>
+                    <li><i class="fas fa-check-circle"></i> Network Setup</li>
+                    <li><i class="fas fa-check-circle"></i> IT Infrastructure Support</li>
+                </ul>
+            </div>
+
+            <!-- Project Management & Collaboration -->
+            <div class="col-md-6 mb-3">
+                <h5 class="text-white"><i class="fas fa-project-diagram"></i> <strong>Project Management &
+                        Collaboration</strong></h5>
+                <ul class="list-unstyled text-white">
+                    <li><i class="fas fa-check-circle"></i> Trello</li>
+                    <li><i class="fas fa-check-circle"></i> Jira</li>
+                    <li><i class="fas fa-check-circle"></i> Agile Methodologies</li>
+                    <li><i class="fas fa-check-circle"></i> Cross-Functional Team Collaboration</li>
+                </ul>
+            </div>
+
+            <!-- Other Technologies & Tools -->
+            <div class="col-md-6 mb-3">
+                <h5 class="text-white"><i class="fas fa-laptop"></i> <strong>Other Technologies & Tools</strong></h5>
+                <ul class="list-unstyled text-white">
+                    <li><i class="fas fa-check-circle"></i> Git</li>
+                    <li><i class="fas fa-check-circle"></i> MS Office Suite</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="container mb-5 py-5 section-color-grading">
+        <h2 class="text-center text-white mb-4">Experience</h2>
+        <div class="row">
+            <!-- Software Engineer -->
             <div class="col-12 col-md-6 mb-3">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm bg-transparent border-0 text-white">
                     <div class="card-body">
                         <h5 class="card-title">Software Engineer</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Acelucid Technologies Private Limited (Sep 2022 - July 2024)</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Acelucid Technologies Private Limited (Sep 2022 - July
+                            2024)</h6>
                         <ul class="list-unstyled">
-                            <li>Implemented new Web APIs to add features or resolve bugs.</li>
-                            <li>Developed LINQ queries using Entity Framework.</li>
-                            <li>Integrated APIs with front-end using Angular.</li>
-                            <li>Improved performance of APIs by 30-50%.</li>
+                            <li><i class="fas fa-check-circle"></i> Developed and maintained Web APIs, enhancing
+                                features and resolving bugs.</li>
+                            <li><i class="fas fa-check-circle"></i> Optimized database queries by leveraging LINQ and
+                                Entity Framework.</li>
+                            <li><i class="fas fa-check-circle"></i> Integrated backend APIs with Angular frontend
+                                applications for seamless user experiences.</li>
+                            <li><i class="fas fa-check-circle"></i> Enhanced API performance by up to 50%, ensuring
+                                faster response times.</li>
                         </ul>
                     </div>
                 </div>
             </div>
+
+            <!-- Intern Application Support Engineer -->
             <div class="col-12 col-md-6 mb-3">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm bg-transparent border-0 text-white">
                     <div class="card-body">
                         <h5 class="card-title">Intern Application Support Engineer</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Onetrust Private Limited (Mar 2022 - June 2022)</h6>
                         <ul class="list-unstyled">
-                            <li>Provided technical support for enterprise-level applications.</li>
-                            <li>Efficiently triaged and resolved incoming tickets.</li>
+                            <li><i class="fas fa-check-circle"></i> Provided expert-level technical support for
+                                enterprise software applications.</li>
+                            <li><i class="fas fa-check-circle"></i> Efficiently triaged, diagnosed, and resolved
+                                incoming support tickets, ensuring minimal downtime.</li>
                         </ul>
                     </div>
                 </div>
             </div>
+
+            <!-- IT Support Engineer -->
             <div class="col-12 col-md-6 mb-3">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm bg-transparent border-0 text-white">
                     <div class="card-body">
                         <h5 class="card-title">IT Support Engineer</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Fortune Systems (Mar 2019 - Feb 2022)</h6>
                         <ul class="list-unstyled">
-                            <li>Diagnosed and fixed hardware issues.</li>
-                            <li>Upgraded faulty components such as RAM and hard drives.</li>
-                            <li>Installed and configured software applications.</li>
+                            <li><i class="fas fa-check-circle"></i> Diagnosed and resolved hardware issues, ensuring
+                                optimal system performance.</li>
+                            <li><i class="fas fa-check-circle"></i> Upgraded faulty components, including RAM and hard
+                                drives, to enhance system reliability.</li>
+                            <li><i class="fas fa-check-circle"></i> Installed and configured essential software
+                                applications for end-users and departments.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="contact" class="container mb-5">
-        <h2 class="text-center">Contact</h2>
-        <p class="text-center">Email: <a href="mailto:sumanthdr@yahoo.com">sumanthdr@yahoo.com</a></p>        
-        <p class="text-center">GitHub: <a href="https://github.com/sumanthdr">github.com/sumanthdr</a></p>
+
+    <section id="contact" class="container py-5 margin-from-bottom-40 section-color-grading">
+        <h2 class="text-center text-white mb-4">Contact</h2>
+        <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+            <p class="mb-0 text-white">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:sumanthdr@yahoo.com" class="text-white text-decoration-none">sumanthdr@yahoo.com</a>
+            </p>
+            <p class="mb-0 text-white">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/sumanthdr" target="_blank"
+                    class="text-white text-decoration-none">github.com/sumanthdr</a>
+            </p>
+            <p class="mb-0 text-white">
+                <i class="fab fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/sumanthdr/" target="_blank"
+                    class="text-white text-decoration-none">https://www.linkedin.com/in/sumanthdr/</a>
+            </p>
+        </div>
     </section>
 
-    <footer class="bg-light text-center py-4">
-        <p class="mb-0">&copy; 2024 Sumanth D R</p>
+    <footer class="text-center py-4 nav-bar-color-grading">
+        <p class="mb-0 text-white footer-text-size">&copy; 2024 Sumanth D R</p>
     </footer>
+
+    <button onclick="scrollToTop()" id="backToTopBtn" class="btn btn-primary">
+        ↑ Top
+    </button>
+
 </body>
+
 </html>

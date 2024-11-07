@@ -1,3 +1,72 @@
 /*
 USE THIS FOR ANY CUSTOM STYLING
 */
+
+.text-justify {
+    text-align: justify;
+}
+
+#backToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Hide by default */
+    z-index: 1000;
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    background: linear-gradient(to right, #6a74b7, #ff85a2); /* Gradient background */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for better visibility */
+    transition: background 0.3s ease; /* Smooth transition on hover */
+}
+
+#backToTopBtn:hover {
+    background: linear-gradient(to right, #ff85a2, #6a74b7); /* Reverse gradient on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+.nav-bar-color-grading{
+    background: linear-gradient(to right, #1e3c72, #2a5298, #ff6a8f);
+}
+
+
+
+.section-color-grading{
+    background: linear-gradient(to right, #5f6caf, #ff85a2);
+}
+
+.margin-from-bottom-40 {
+    margin-bottom: 40px; /* Adjust the gap size between the Contact section and footer */
+}
+
+.margin-from-top-40{
+    margin-top: 40px;
+}
+
+footer-text-size{
+    font-size: 1.10rem;
+}
+
+/* Navbar Link Hover Effect */
+.navbar-nav .nav-link:hover {
+    background: linear-gradient(to right, #6a74b7, #ff85a2); /* Gradient background */
+    color: white !important; /* Ensure text stays white */
+    border-radius: 5px; /* Rounded corners on hover */
+    padding: 10px 15px; /* Add some padding to make it feel like a button */
+}
+
+/* Active Link Styling (when the link is selected) */
+.navbar-nav .nav-link.active {
+    background: linear-gradient(to right, #6a74b7, #ff85a2); /* Gradient background */
+    color: white !important; /* White text */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Make active link bold */
+    padding: 10px 15px; /* Add padding for emphasis */
+}
+
+/* #experience h2 {
+    margin-top: 40px; /* You can adjust the top margin for "About Me" specifically */
+} */
