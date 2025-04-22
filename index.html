@@ -4,274 +4,514 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./style.css">
-    <script src="./bootstrap-5.3.3-dist/js/jquery-3.6.0.min.js"></script>
-    <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="path/to/backToTop.js"></script>
+    <link rel="stylesheet" href="./style.css">
     <title>Software Engineer | Web Developer | Full Stack Developer </title>
 </head>
 
-<body>
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <div id="three-container" class="fixed top-0 left-0 w-full h-full -z-10"></div>
+    
     <script src="action.js"></script>
+    <script src="three-scene.js"></script>
 
-    <nav class="navbar navbar-expand-lg navbar-light mb-5 nav-bar-color-grading">
-        <div class="container">
-            <a class="navbar-brand fs-3 fw-bold text-white" href="#">SUMANTH D R</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#education">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#contact">Contact</a>
-                    </li>
-                </ul>
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 nav-bar-color-grading backdrop-blur-md bg-opacity-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-bold text-white hover:text-gray-200 transition-colors flex items-center">
+                    <span class="name-animation bg-gradient-to-r from-blue-500 to-pink-500 text-transparent bg-clip-text">
+                        <span class="name-letter">S</span>
+                        <span class="name-letter">U</span>
+                        <span class="name-letter">M</span>
+                        <span class="name-letter">A</span>
+                        <span class="name-letter">N</span>
+                        <span class="name-letter">T</span>
+                        <span class="name-letter">H</span>
+                        <span class="name-letter">&nbsp;</span>
+                        <span class="name-letter">D</span>
+                        <span class="name-letter">A</span>
+                        <span class="name-letter">N</span>
+                        <span class="name-letter">D</span>
+                        <span class="name-letter">E</span>
+                        <span class="name-letter">N</span>
+                        <span class="name-letter">A</span>
+                        <span class="name-letter">H</span>
+                        <span class="name-letter">A</span>
+                        <span class="name-letter">L</span>
+                        <span class="name-letter">L</span>
+                        <span class="name-letter">I</span>
+                        <span class="name-letter">&nbsp;</span>
+                        <span class="name-letter">R</span>
+                        <span class="name-letter">A</span>
+                        <span class="name-letter">M</span>
+                        <span class="name-letter">A</span>
+                        <span class="name-letter">N</span>
+                        <span class="name-letter">N</span>
+                        <span class="name-letter">A</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-white hover:text-gray-200 transition-colors relative group">
+                        About
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#education" class="nav-link text-white hover:text-gray-200 transition-colors relative group">
+                        Education
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#skills" class="nav-link text-white hover:text-gray-200 transition-colors relative group">
+                        Skills
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#experience" class="nav-link text-white hover:text-gray-200 transition-colors relative group">
+                        Experience
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="nav-link text-white hover:text-gray-200 transition-colors relative group">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-white focus:outline-none" id="mobileMenuButton">
+                    <div class="w-6 h-6 flex flex-col justify-between">
+                        <span class="w-full h-0.5 bg-white transition-all duration-300"></span>
+                        <span class="w-full h-0.5 bg-white transition-all duration-300"></span>
+                        <span class="w-full h-0.5 bg-white transition-all duration-300"></span>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden" id="mobileMenu">
+                <div class="flex flex-col space-y-4 py-4">
+                    <a href="#about" class="text-white hover:text-gray-200 transition-colors py-2 px-4 rounded-lg hover:bg-white/10">
+                        <i class="fas fa-user mr-2"></i>About
+                    </a>
+                    <a href="#education" class="text-white hover:text-gray-200 transition-colors py-2 px-4 rounded-lg hover:bg-white/10">
+                        <i class="fas fa-graduation-cap mr-2"></i>Education
+                    </a>
+                    <a href="#skills" class="text-white hover:text-gray-200 transition-colors py-2 px-4 rounded-lg hover:bg-white/10">
+                        <i class="fas fa-code mr-2"></i>Skills
+                    </a>
+                    <a href="#experience" class="text-white hover:text-gray-200 transition-colors py-2 px-4 rounded-lg hover:bg-white/10">
+                        <i class="fas fa-briefcase mr-2"></i>Experience
+                    </a>
+                    <a href="#contact" class="text-white hover:text-gray-200 transition-colors py-2 px-4 rounded-lg hover:bg-white/10">
+                        <i class="fas fa-envelope mr-2"></i>Contact
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
-    <!-- About Section with Collapsible Content -->
-    <section id="about" class="container py-5 section-color-grading">
-        <h2 class="text-center mb-4 text-white">About Me</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-4 text-center mb-4">
-                <img src="assets/about-jpg.JPG" class="img-fluid rounded shadow" alt="Profile Image">
-            </div>
-            <div class="col-md-8">
-                <p class="lead text-justify text-white">
-                    Building, developing, and bringing technological ideas to life has been my driving force for the past two years.
-                    I have explored building scalable systems and mastered the tools necessary to work with .Net Core, Angular, EF Core, 
-                    and SQL Servers. In turn, I have shaped systems into a seamless digital experience. As a master’s student at Northern 
-                    Arizona University, my focus is on Computer Science. My hub is ever expanding as I delve into
-                    distributed systems, cryptography, and database design.
-                </p>
-                <button class="btn btn-outline-light mt-3" data-bs-toggle="collapse" href="#aboutMore" role="button"
-                    aria-expanded="false" aria-controls="aboutMore">
-                    Read More
-                </button>
-                <div class="collapse mt-3" id="aboutMore">
-                    <p class="text-justify text-white">
-                        As a Software Engineer at Acelucid Technologies Private Limited, I
-                        transformed challenges into impactful solutions and delivered robust applications with precision. My
-                        academic journey is equally dynamic—I developed a full-fledged student information system and designed a 
-                        custom cryptographic hashing algorithm. Each project sharpened my ability to merge creativity with technical expertise.
-                    </p>
-                    <p class="text-justify text-white">
-                        From troubleshooting IT systems as a support engineer to writing efficient stored procedures, I’ve
-                        always embraced opportunities to solve problems and make an impact. 
-                        Beyond the screen, I recharge my energy through badminton and music, finding balance and clarity.
-                    </p>
-                    <p class="text-justify text-white">
-                        I am here to innovate, connect, and collaborate. Whether it is through cutting-edge APIs or
-                        visionary database designs, I aim to push boundaries and shape a smart, tech-driven future. Let
-                        us build something extraordinary!
-                    </p>
+
+    <main class="pt-20">
+        <!-- About Section -->
+        <section id="about" class="container mx-auto px-4 py-20">
+            <div class="max-w-4xl mx-auto bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-8 shadow-xl">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gradient">About Me</h2>
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-full md:w-1/3">
+                        <img src="assets/about-jpg.JPG" alt="Profile Image" class="rounded-full w-64 h-64 object-cover mx-auto shadow-lg hover:shadow-xl transition-shadow">
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <p class="text-lg leading-relaxed mb-4">
+                            Building, developing, and bringing technological ideas to life has been my driving force for the past two years.
+                            I have explored building scalable systems and mastered the tools necessary to work with .Net Core, Angular, EF Core, 
+                            and SQL Servers. In turn, I have shaped systems into a seamless digital experience. As a master's student at Northern 
+                            Arizona University, my focus is on Computer Science. My hub is ever expanding as I delve into
+                            distributed systems, cryptography, and database design.
+                        </p>
+                        <button class="mt-4 px-6 py-2 bg-gradient-to-r from-blue-600 to-pink-500 rounded-full text-white hover:from-pink-500 hover:to-blue-600 transition-all" id="readMoreBtn">
+                            Read More
+                        </button>
+                        <div id="aboutMore" class="hidden mt-4">
+                            <p class="text-lg leading-relaxed mb-4">
+                                As a Software Engineer at Acelucid Technologies Private Limited, I
+                                transformed challenges into impactful solutions and delivered robust applications with precision. My
+                                academic journey is equally dynamic—I developed a full-fledged student information system and designed a 
+                                custom cryptographic hashing algorithm. Each project sharpened my ability to merge creativity with technical expertise.
+                            </p>
+                            <p class="text-lg leading-relaxed mb-4">
+                                From troubleshooting IT systems as a support engineer to writing efficient stored procedures, I've
+                                always embraced opportunities to solve problems and make an impact. 
+                                Beyond the screen, I recharge my energy through badminton and music, finding balance and clarity.
+                            </p>
+                            <p class="text-lg leading-relaxed">
+                                I am here to innovate, connect, and collaborate. Whether it is through cutting-edge APIs or
+                                visionary database designs, I aim to push boundaries and shape a smart, tech-driven future. Let
+                                us build something extraordinary!
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="education" class="container mb-5 section-color-grading margin-from-top-40">
-        <h2 class="text-center text-white mb-4">Education</h2>
-        <ul class="list-group">
-            <li class="list-group-item bg-transparent border-0 text-white">
-                <strong>Master of Science in Computer Science (MS CS)</strong> - Northern Arizona University, Dec 2025
-            </li>
-            <li class="list-group-item bg-transparent border-0 text-white">
-                <strong>Master of Computer Applications (MCA)</strong> - Siddaganga Institute of Technology, Aug 2022
-            </li>
-        </ul>
-    </section>
-
-    <section id="skills" class="container mb-5 py-5 section-color-grading">
-        <h2 class="text-center text-white mb-4">Skills</h2>
-        <div class="row">
-            <!-- Programming Languages -->
-            <div class="col-md-6 mb-3">
-                <h5 class="text-white"><i class="fas fa-code"></i> <strong>Programming Languages</strong></h5>
-                <ul class="list-unstyled text-white">
-                    <li><i class="fas fa-check-circle"></i> C#</li>
-                    <li><i class="fas fa-check-circle"></i> Core Java</li>
-                    <li><i class="fas fa-check-circle"></i> JavaScript</li>
-                    <li><i class="fas fa-check-circle"></i> C</li>
-                </ul>
+        <!-- Education Section -->
+        <section id="education" class="container mx-auto px-4 py-20">
+            <div class="max-w-4xl mx-auto bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-8 shadow-xl">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gradient">Education</h2>
+                <div class="space-y-6">
+                    <div class="bg-white bg-opacity-5 p-6 rounded-lg hover:bg-opacity-10 transition-all">
+                        <h3 class="text-xl font-semibold">Master of Science in Computer Science (MS CS)</h3>
+                        <p class="text-gray-300">Northern Arizona University</p>
+                        <p class="text-gray-400">Expected Dec 2025</p>
+                    </div>
+                    <div class="bg-white bg-opacity-5 p-6 rounded-lg hover:bg-opacity-10 transition-all">
+                        <h3 class="text-xl font-semibold">Master of Computer Applications (MCA)</h3>
+                        <p class="text-gray-300">Siddaganga Institute of Technology</p>
+                        <p class="text-gray-400">Aug 2022</p>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <!-- Frameworks & Libraries -->
-            <div class="col-md-6 mb-3">
-                <h5 class="text-white"><i class="fas fa-laptop-code"></i> <strong>Frameworks & Libraries</strong></h5>
-                <ul class="list-unstyled text-white">
-                    <li><i class="fas fa-check-circle"></i> .NET Core</li>
-                    <li><i class="fas fa-check-circle"></i> ASP.NET</li>
-                    <li><i class="fas fa-check-circle"></i> Entity Framework</li>
-                    <li><i class="fas fa-check-circle"></i> Angular</li>
-                    <li><i class="fas fa-check-circle"></i> Kendo UI</li>
-                </ul>
-            </div>
+        <!-- Skills Section -->
+        <section id="skills" class="container mx-auto px-4 py-20">
+            <div class="max-w-4xl mx-auto bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-8 shadow-xl">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gradient">Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Programming Languages -->
+                    <div class="bg-white bg-opacity-5 p-6 rounded-lg hover:bg-opacity-10 transition-all">
+                        <h3 class="text-xl font-semibold mb-4"><i class="fas fa-code mr-2"></i>Programming Languages</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>C#</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Core Java</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>JavaScript</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>C</li>
+                        </ul>
+                    </div>
 
-            <!-- Databases & SQL -->
-            <div class="col-md-6 mb-3">
-                <h5 class="text-white"><i class="fas fa-database"></i> <strong>Databases & SQL</strong></h5>
-                <ul class="list-unstyled text-white">
-                    <li><i class="fas fa-check-circle"></i> MS-SQL</li>
-                    <li><i class="fas fa-check-circle"></i> MySQL</li>
-                    <li><i class="fas fa-check-circle"></i> PostgreSQL</li>
-                    <li><i class="fas fa-check-circle"></i> SQL Server Management Studio</li>
-                    <li><i class="fas fa-check-circle"></i> Writing Stored Procedures</li>
-                    <li><i class="fas fa-check-circle"></i> Complex SQL Queries</li>
-                </ul>
-            </div>
+                    <!-- Frameworks & Libraries -->
+                    <div class="bg-white bg-opacity-5 p-6 rounded-lg hover:bg-opacity-10 transition-all">
+                        <h3 class="text-xl font-semibold mb-4"><i class="fas fa-laptop-code mr-2"></i>Frameworks & Libraries</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>.NET Core</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>ASP.NET</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Entity Framework</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Angular</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Kendo UI</li>
+                        </ul>
+                    </div>
 
-            <!-- Tools & Development Environments -->
-            <div class="col-md-6 mb-3">
-                <h5 class="text-white"><i class="fas fa-tools"></i> <strong>Tools & Development Environments</strong>
-                </h5>
-                <ul class="list-unstyled text-white">
-                    <li><i class="fas fa-check-circle"></i> Visual Studio</li>
-                    <li><i class="fas fa-check-circle"></i> VS Code</li>
-                    <li><i class="fas fa-check-circle"></i> GitHub</li>
-                    <li><i class="fas fa-check-circle"></i> Azure DevOps</li>
-                </ul>
-            </div>
+                    <!-- Databases & SQL -->
+                    <div class="bg-white bg-opacity-5 p-6 rounded-lg hover:bg-opacity-10 transition-all">
+                        <h3 class="text-xl font-semibold mb-4"><i class="fas fa-database mr-2"></i>Databases & SQL</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>MS-SQL</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>MySQL</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>PostgreSQL</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>SQL Server Management Studio</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Writing Stored Procedures</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Complex SQL Queries</li>
+                        </ul>
+                    </div>
 
-            <!-- IT Support Skills -->
-            <div class="col-md-6 mb-3">
-                <h5 class="text-white"><i class="fas fa-cogs"></i> <strong>IT Support & Systems Administration</strong>
-                </h5>
-                <ul class="list-unstyled text-white">
-                    <li><i class="fas fa-check-circle"></i> Hardware Troubleshooting</li>
-                    <li><i class="fas fa-check-circle"></i> Software Installation</li>
-                    <li><i class="fas fa-check-circle"></i> System Configuration</li>
-                    <li><i class="fas fa-check-circle"></i> Network Setup</li>
-                    <li><i class="fas fa-check-circle"></i> IT Infrastructure Support</li>
-                </ul>
-            </div>
+                    <!-- Tools & Development Environments -->
+                    <div class="bg-white bg-opacity-5 p-6 rounded-lg hover:bg-opacity-10 transition-all">
+                        <h3 class="text-xl font-semibold mb-4"><i class="fas fa-tools mr-2"></i>Tools & Development Environments</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Visual Studio</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>VS Code</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>GitHub</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Azure DevOps</li>
+                        </ul>
+                    </div>
 
-            <!-- Project Management & Collaboration -->
-            <div class="col-md-6 mb-3">
-                <h5 class="text-white"><i class="fas fa-project-diagram"></i> <strong>Project Management &
-                        Collaboration</strong></h5>
-                <ul class="list-unstyled text-white">
-                    <li><i class="fas fa-check-circle"></i> Trello</li>
-                    <li><i class="fas fa-check-circle"></i> Jira</li>
-                    <li><i class="fas fa-check-circle"></i> Agile Methodologies</li>
-                    <li><i class="fas fa-check-circle"></i> Cross-Functional Team Collaboration</li>
-                </ul>
-            </div>
+                    <!-- IT Support Skills -->
+                    <div class="bg-white bg-opacity-5 p-6 rounded-lg hover:bg-opacity-10 transition-all">
+                        <h3 class="text-xl font-semibold mb-4"><i class="fas fa-cogs mr-2"></i>IT Support & Systems Administration</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Hardware Troubleshooting</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Software Installation</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>System Configuration</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Network Setup</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>IT Infrastructure Support</li>
+                        </ul>
+                    </div>
 
-            <!-- Other Technologies & Tools -->
-            <div class="col-md-6 mb-3">
-                <h5 class="text-white"><i class="fas fa-laptop"></i> <strong>Other Technologies & Tools</strong></h5>
-                <ul class="list-unstyled text-white">
-                    <li><i class="fas fa-check-circle"></i> Git</li>
-                    <li><i class="fas fa-check-circle"></i> MS Office Suite</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+                    <!-- Project Management & Collaboration -->
+                    <div class="bg-white bg-opacity-5 p-6 rounded-lg hover:bg-opacity-10 transition-all">
+                        <h3 class="text-xl font-semibold mb-4"><i class="fas fa-project-diagram mr-2"></i>Project Management & Collaboration</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Trello</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Jira</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Agile Methodologies</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Cross-Functional Team Collaboration</li>
+                        </ul>
+                    </div>
 
-    <section id="experience" class="container mb-5 py-5 section-color-grading">
-        <h2 class="text-center text-white mb-4">Experience</h2>
-        <div class="row">
-            <!-- Software Engineer -->
-            <div class="col-12 col-md-6 mb-3">
-                <div class="card shadow-sm bg-transparent border-0 text-white">
-                    <div class="card-body">
-                        <h5 class="card-title">Software Engineer</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Acelucid Technologies Private Limited (Sep 2022 - July
-                            2024)</h6>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check-circle"></i> Developed and maintained Web APIs, enhancing
-                                features and resolving bugs.</li>
-                            <li><i class="fas fa-check-circle"></i> Optimized database queries by leveraging LINQ and
-                                Entity Framework.</li>
-                            <li><i class="fas fa-check-circle"></i> Integrated backend APIs with Angular front-end 
-                                applications for seamless user experiences.</li>
-                            <li><i class="fas fa-check-circle"></i> Enhanced API performance by up to 50%, ensuring
-                                faster response times.</li>
+                    <!-- Other Technologies & Tools -->
+                    <div class="bg-white bg-opacity-5 p-6 rounded-lg hover:bg-opacity-10 transition-all">
+                        <h3 class="text-xl font-semibold mb-4"><i class="fas fa-laptop mr-2"></i>Other Technologies & Tools</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Git</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>MS Office Suite</li>
                         </ul>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Intern Application Support Engineer -->
-            <div class="col-12 col-md-6 mb-3">
-                <div class="card shadow-sm bg-transparent border-0 text-white">
-                    <div class="card-body">
-                        <h5 class="card-title">Intern Application Support Engineer</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Onetrust Private Limited (Mar 2022 - June 2022)</h6>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check-circle"></i> Provided expert-level technical support for
-                                enterprise software applications.</li>
-                            <li><i class="fas fa-check-circle"></i> Efficiently triaged, diagnosed, and resolved
-                                incoming support tickets, ensuring minimal downtime.</li>
+        <!-- Experience Section -->
+        <section id="experience" class="container mx-auto px-4 py-20">
+            <div class="max-w-4xl mx-auto bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-8 shadow-xl">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gradient">Experience</h2>
+                <div class="space-y-6">
+                    <!-- Software Engineer -->
+                    <div class="bg-white bg-opacity-5 p-6 rounded-lg hover:bg-opacity-10 transition-all">
+                        <h3 class="text-xl font-semibold">Software Engineer</h3>
+                        <p class="text-gray-300">Acelucid Technologies Private Limited</p>
+                        <p class="text-gray-400">Sep 2022 - July 2024</p>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>Developed and maintained Web APIs, enhancing features and resolving bugs.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>Optimized database queries by leveraging LINQ and Entity Framework.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>Integrated backend APIs with Angular front-end applications for seamless user experiences.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>Enhanced API performance by up to 50%, ensuring faster response times.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Intern Application Support Engineer -->
+                    <div class="bg-white bg-opacity-5 p-6 rounded-lg hover:bg-opacity-10 transition-all">
+                        <h3 class="text-xl font-semibold">Intern Application Support Engineer</h3>
+                        <p class="text-gray-300">Onetrust Private Limited</p>
+                        <p class="text-gray-400">Mar 2022 - June 2022</p>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>Provided expert-level technical support for enterprise software applications.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>Efficiently triaged, diagnosed, and resolved incoming support tickets, ensuring minimal downtime.</li>
+                        </ul>
+                    </div>
+
+                    <!-- IT Support Engineer -->
+                    <div class="bg-white bg-opacity-5 p-6 rounded-lg hover:bg-opacity-10 transition-all">
+                        <h3 class="text-xl font-semibold">IT Support Engineer</h3>
+                        <p class="text-gray-300">Fortune Systems</p>
+                        <p class="text-gray-400">Mar 2019 - Feb 2022</p>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>Diagnosed and resolved hardware issues, ensuring optimal system performance.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>Upgraded faulty components, including RAM and hard drives, to enhance system reliability.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>Installed and configured essential software applications for end-users and departments.</li>
                         </ul>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- IT Support Engineer -->
-            <div class="col-12 col-md-6 mb-3">
-                <div class="card shadow-sm bg-transparent border-0 text-white">
-                    <div class="card-body">
-                        <h5 class="card-title">IT Support Engineer</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Fortune Systems (Mar 2019 - Feb 2022)</h6>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check-circle"></i> Diagnosed and resolved hardware issues, ensuring
-                                optimal system performance.</li>
-                            <li><i class="fas fa-check-circle"></i> Upgraded faulty components, including RAM and hard
-                                drives, to enhance system reliability.</li>
-                            <li><i class="fas fa-check-circle"></i> Installed and configured essential software
-                                applications for end-users and departments.</li>
-                        </ul>
-                    </div>
+        <!-- Contact Section -->
+        <section id="contact" class="container mx-auto px-4 py-20">
+            <div class="max-w-4xl mx-auto bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-8 shadow-xl">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gradient">Contact</h2>
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+                    <a href="mailto:sumanthdr@yahoo.com" class="flex items-center text-white hover:text-gray-200 transition-colors">
+                        <i class="fas fa-envelope text-black text-2xl mr-2"></i>
+                        <span>sumanthdr@yahoo.com</span>
+                    </a>                    
+                    <a href="https://github.com/sumanthdr" target="_blank" class="flex items-center text-white hover:text-gray-200 transition-colors">
+                        <i class="fab fa-github text-black text-2xl mr-2"></i>
+                        <span>github.com/sumanthdr</span>
+                    </a>                    
+                    <a href="https://www.linkedin.com/in/sumanthdr/" target="_blank" class="flex items-center text-white hover:text-gray-200 transition-colors">
+                        <i class="fab fa-linkedin text-black text-2xl mr-2"></i>
+                        <span>linkedin.com/in/sumanthdr</span>
+                    </a>
+                    
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section id="contact" class="container py-5 margin-from-bottom-40 section-color-grading">
-        <h2 class="text-center text-white mb-4">Contact</h2>
-        <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
-            <p class="mb-0 text-white">
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:sumanthdr@yahoo.com" class="text-white text-decoration-none">sumanthdr@yahoo.com</a>
-            </p>
-            <p class="mb-0 text-white">
-                <i class="fab fa-github"></i>
-                <a href="https://github.com/sumanthdr" target="_blank"
-                    class="text-white text-decoration-none">github.com/sumanthdr</a>
-            </p>
-            <p class="mb-0 text-white">
-                <i class="fab fa-linkedin"></i>
-                <a href="https://www.linkedin.com/in/sumanthdr/" target="_blank"
-                    class="text-white text-decoration-none">https://www.linkedin.com/in/sumanthdr/</a>
-            </p>
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-white">&copy; 2025 Sumanth Dandenahalli Ramanna. All rights reserved.</p>
         </div>
-    </section>
-
-    <footer class="text-center py-4 nav-bar-color-grading">
-        <p class="mb-0 text-white footer-text-size">&copy; 2024 Sumanth D R</p>
     </footer>
+    
 
-    <button onclick="scrollToTop()" id="backToTopBtn" class="btn btn-primary">
-        ↑ Top
+    <button id="backToTopBtn" class="fixed bottom-8 right-8 bg-gradient-to-r from-blue-600 to-pink-500 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all">
+        <i class="fas fa-arrow-up"></i>
     </button>
 
+    <script>
+        // Mobile menu toggle with animation
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuSpans = mobileMenuButton.querySelectorAll('span');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // Animate hamburger to X
+            menuSpans[0].classList.toggle('rotate-45');
+            menuSpans[0].classList.toggle('translate-y-2.5');
+            menuSpans[1].classList.toggle('opacity-0');
+            menuSpans[2].classList.toggle('-rotate-45');
+            menuSpans[2].classList.toggle('-translate-y-2.5');
+        });
+
+        // Navbar scroll effect
+        const mainNav = document.getElementById('mainNav');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                mainNav.classList.remove('bg-gray-900/80', 'backdrop-blur-md');
+                mainNav.classList.add('bg-transparent');
+            } else {
+                mainNav.classList.remove('bg-transparent');
+                mainNav.classList.add('bg-gray-900/80', 'backdrop-blur-md');
+            }
+
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                mainNav.style.transform = 'translateY(-100%)';
+            } else {
+                mainNav.style.transform = 'translateY(0)';
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Active link highlighting
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        function setActiveLink() {
+            const sections = document.querySelectorAll('section');
+            const scrollPosition = window.scrollY;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-blue-400');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('text-blue-400');
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', setActiveLink);
+        setActiveLink(); // Initial call
+
+        // Read more button functionality
+        const readMoreBtn = document.getElementById('readMoreBtn');
+        const aboutMore = document.getElementById('aboutMore');
+        
+        readMoreBtn.addEventListener('click', () => {
+            aboutMore.classList.toggle('hidden');
+        });
+
+        // Back to top button functionality
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // GSAP Name Animation
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Split text animation
+        const nameLetters = document.querySelectorAll('.name-letter');
+        
+        // Initial state
+        gsap.set(nameLetters, {
+            opacity: 0,
+            y: 20,
+            rotateX: -90
+        });
+
+        // Create the animation
+        const nameTimeline = gsap.timeline({
+            repeat: -1,
+            repeatDelay: 2
+        });
+
+        nameTimeline
+            .to(nameLetters, {
+                opacity: 1,
+                y: 0,
+                rotateX: 0,
+                duration: 0.5,
+                stagger: 0.1,
+                ease: "back.out(1.7)"
+            })
+            .to(nameLetters, {
+                scale: 1.1,
+                duration: 0.2,
+                stagger: 0.05,
+                ease: "power2.inOut"
+            })
+            .to(nameLetters, {
+                scale: 1,
+                duration: 0.2,
+                stagger: 0.05,
+                ease: "power2.inOut"
+            })
+            .to(nameLetters, {
+                opacity: 0,
+                y: -20,
+                rotateX: 90,
+                duration: 0.5,
+                stagger: 0.05,
+                ease: "back.in(1.7)"
+            });
+
+        // Add hover effect
+        const nameContainer = document.querySelector('.name-animation');
+        
+        nameContainer.addEventListener('mouseenter', () => {
+            gsap.to(nameLetters, {
+                scale: 1.2,
+                duration: 0.3,
+                stagger: 0.05,
+                ease: "elastic.out(1, 0.3)"
+            });
+        });
+
+        nameContainer.addEventListener('mouseleave', () => {
+            gsap.to(nameLetters, {
+                scale: 1,
+                duration: 0.3,
+                stagger: 0.05,
+                ease: "elastic.out(1, 0.3)"
+            });
+        });
+
+        // Add scroll-based animation
+        ScrollTrigger.create({
+            trigger: ".name-animation",
+            start: "top center",
+            onEnter: () => {
+                nameTimeline.play();
+            },
+            onLeaveBack: () => {
+                nameTimeline.pause();
+            }
+        });
+    </script>
 </body>
 
 </html>
