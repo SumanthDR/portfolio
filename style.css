@@ -668,3 +668,15 @@ section > div:hover {
                 0 10px 10px rgba(0, 0, 0, 0.1),
                 0 0 120px rgba(6, 32, 43, 0.1);
 }
+
+.read-more-btn {
+    background: var(--primary-gradient);
+    color: var(--background-color);
+    transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background: var(--secondary-gradient);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
